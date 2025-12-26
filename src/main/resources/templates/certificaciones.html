@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Certificaciones - Reconocimientos profesionales en gestión de bases de datos">
+    <title th:text="${titulo}">Certificaciones - Especialista en Bases de Datos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a th:href="@{/}" class="logo-container">
+                <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/sobre-mi}">Sobre Mí</a></li>
+                <li><a th:href="@{/experiencia}">Experiencia</a></li>
+                <li><a th:href="@{/especialidades}">Especialidades</a></li>
+                <li><a th:href="@{/certificaciones}">Certificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Certificaciones -->
+    <section class="certifications" style="padding-top: 3rem;">
+        <div class="section-container">
+            <h2 class="section-title">Certificaciones y Formación</h2>
+            <p class="section-subtitle">Reconocimientos profesionales en gestión de bases de datos</p>
+            
+            <div class="cert-images-grid">
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/az900.png}" alt="Microsoft Azure Fundamentals" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/ai900.png}" alt="Microsoft Azure AI Fundamentals" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/dp900.png}" alt="Microsoft Azure Data Fundamentals" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/OIC1.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/OCI2.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/OCI3.jpg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/BI.png}" alt="Business Intelligence" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/BigData.png}" alt="Big Data" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/CybersecurityAwareness.png}" alt="Cybersecurity Awareness" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/GitHibFundations.png}" alt="GitHub Foundations" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/ScrumFundation.png}" alt="Scrum Foundation" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/AiGenerative.png}" alt="AI Generative" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/Canvas.png}" alt="Canvas" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/Finops.png}" alt="FinOps" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/Focus.png}" alt="Focus" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/Databricks.png}" alt="Databricks" class="cert-image">
+                </div>
+                <div class="cert-image-card">
+                    <img th:src="@{/images/Certificaciones/Qualys.png}" alt="Qualys" class="cert-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Especialista en Bases de Datos | Sector Seguros</p>
+            <p>Más de 20 años garantizando la excelencia en gestión de datos empresariales</p>
+        </div>
+    </footer>
+</body>
+</html>
+

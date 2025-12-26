@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre Mí - Especialista en Bases de Datos con más de 20 años de experiencia en el sector de seguros">
+    <title th:text="${titulo}">Sobre Mí - Especialista en Bases de Datos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a th:href="@{/}" class="logo-container">
+                <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/sobre-mi}">Sobre Mí</a></li>
+                <li><a th:href="@{/experiencia}">Experiencia</a></li>
+                <li><a th:href="@{/especialidades}">Especialidades</a></li>
+                <li><a th:href="@{/certificaciones}">Certificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Sobre Mí -->
+    <section class="about" style="padding-top: 3rem;">
+        <div class="section-container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <p class="section-subtitle">Experiencia y compromiso en gestión de datos empresariales</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Con más de <span class="highlight">20 años de experiencia</span> en el sector de seguros, 
+                        he desarrollado una especialización profunda en el diseño, implementación y administración 
+                        de bases de datos empresariales de alto rendimiento.
+                    </p>
+                    <p>
+                        Mi experiencia abarca desde la arquitectura de sistemas de información hasta la optimización 
+                        de consultas complejas, garantizando la disponibilidad, seguridad y eficiencia de los datos 
+                        críticos que sostienen las operaciones del negocio asegurador.
+                    </p>
+                    <p>
+                        Durante mi carrera, he liderado proyectos de migración de datos, implementación de políticas 
+                        de backup y recuperación, así como el diseño de esquemas de base de datos escalables que 
+                        soportan el crecimiento y las necesidades cambiantes de las organizaciones del sector seguros.
+                    </p>
+                    <p>
+                        Mi enfoque se centra en comprender las necesidades del negocio para desarrollar soluciones 
+                        de base de datos que no solo cumplan con los requisitos técnicos, sino que también impulsen 
+                        la toma de decisiones estratégicas y operacionales.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img th:src="@{/images/Imagen2.png}" alt="Sobre Mí">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Especialista en Bases de Datos | Sector Seguros</p>
+            <p>Más de 20 años garantizando la excelencia en gestión de datos empresariales</p>
+        </div>
+    </footer>
+</body>
+</html>
+

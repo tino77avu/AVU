@@ -11,21 +11,21 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo-container">
+            <a th:href="@{/}" class="logo-container">
                 <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#especialidades">Especialidades</a></li>
-                <li><a href="#certificaciones">Certificaciones</a></li>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/sobre-mi}">Sobre Mí</a></li>
+                <li><a th:href="@{/experiencia}">Experiencia</a></li>
+                <li><a th:href="@{/especialidades}">Especialidades</a></li>
+                <li><a th:href="@{/certificaciones}">Certificaciones</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Especialista en Bases de Datos</h1>
@@ -36,192 +36,6 @@
             </div>
             <div class="hero-image">
                 <img th:src="@{/images/Imagen1.png}" alt="Imagen Principal">
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="about">
-        <div class="section-container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <p class="section-subtitle">Experiencia y compromiso en gestión de datos empresariales</p>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Con más de <span class="highlight">20 años de experiencia</span> en el sector de seguros, 
-                        he desarrollado una especialización profunda en el diseño, implementación y administración 
-                        de bases de datos empresariales de alto rendimiento.
-                    </p>
-                    <p>
-                        Mi experiencia abarca desde la arquitectura de sistemas de información hasta la optimización 
-                        de consultas complejas, garantizando la disponibilidad, seguridad y eficiencia de los datos 
-                        críticos que sostienen las operaciones del negocio asegurador.
-                    </p>
-                    <p>
-                        Durante mi carrera, he liderado proyectos de migración de datos, implementación de políticas 
-                        de backup y recuperación, así como el diseño de esquemas de base de datos escalables que 
-                        soportan el crecimiento y las necesidades cambiantes de las organizaciones del sector seguros.
-                    </p>
-                    <p>
-                        Mi enfoque se centra en comprender las necesidades del negocio para desarrollar soluciones 
-                        de base de datos que no solo cumplan con los requisitos técnicos, sino que también impulsen 
-                        la toma de decisiones estratégicas y operacionales.
-                    </p>
-                </div>
-                <div class="about-image">
-                    <img th:src="@{/images/Imagen2.png}" alt="Sobre Mí">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Experiencia -->
-    <section id="experiencia">
-        <div class="section-container">
-            <h2 class="section-title">Experiencia y Logros</h2>
-            <p class="section-subtitle">Trayectoria profesional en gestión de datos empresariales</p>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Años de Experiencia</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Proyectos Completados</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Años en Sector Seguros</div>
-                </div>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Arquitectura de Bases de Datos</h3>
-                    <ul>
-                        <li>Diseño de esquemas normalizados y desnormalizados</li>
-                        <li>Arquitectura de sistemas distribuidos</li>
-                        <li>Modelado de datos empresariales</li>
-                        <li>Planeación de capacidad y escalabilidad</li>
-                        <li>Arquitecturas de alta disponibilidad</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>Optimización y Rendimiento</h3>
-                    <ul>
-                        <li>Optimización de consultas SQL complejas</li>
-                        <li>Tuning de índices y particionamiento</li>
-                        <li>Análisis de planes de ejecución</li>
-                        <li>Monitoreo de rendimiento en tiempo real</li>
-                        <li>Resolución de cuellos de botella</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>Seguridad y Cumplimiento</h3>
-                    <ul>
-                        <li>Implementación de políticas de seguridad</li>
-                        <li>Cifrado de datos sensibles</li>
-                        <li>Cumplimiento normativo del sector seguros</li>
-                        <li>Auditoría y trazabilidad de datos</li>
-                        <li>Gestión de acceso y permisos</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>Sector Seguros</h3>
-                    <ul>
-                        <li>Gestión de pólizas y siniestros</li>
-                        <li>Sistemas de tarificación y cálculo de primas</li>
-                        <li>Análisis actuarial y riesgo</li>
-                        <li>Integración con sistemas legacy</li>
-                        <li>Reporting y Business Intelligence</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Especialidades -->
-    <section id="especialidades" class="about">
-        <div class="section-container">
-            <h2 class="section-title">Tecnologías y Especialidades</h2>
-            <p class="section-subtitle">Dominio en múltiples plataformas y herramientas de bases de datos</p>
-            
-            <div class="about-content">
-                <div class="about-image">
-                    <img th:src="@{/images/Imagen3.png}" alt="Tecnologías">
-                </div>
-                <div class="about-text">
-                    <p>
-                        Mi experiencia abarca múltiples sistemas de gestión de bases de datos, incluyendo 
-                        <span class="highlight">Oracle, SQL Server, PostgreSQL, MySQL</span> y sistemas NoSQL 
-                        para casos de uso específicos.
-                    </p>
-                    <p>
-                        Especializado en <span class="highlight">ETL (Extract, Transform, Load)</span>, 
-                        integración de datos, data warehousing y arquitecturas de datos modernas que incluyen 
-                        big data y análisis en tiempo real.
-                    </p>
-                    <p>
-                        Competente en herramientas de administración y monitoreo, scripting automatizado, 
-                        y metodologías ágiles para la gestión de proyectos de base de datos complejos.
-                    </p>
-                    <p>
-                        Conocimiento profundo de las particularidades del sector seguros, incluyendo 
-                        regulaciones, normativas de datos y requerimientos específicos de reporting 
-                        y cumplimiento regulatorio.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Certificaciones -->
-    <section id="certificaciones" class="certifications">
-        <div class="section-container">
-            <h2 class="section-title">Certificaciones y Formación</h2>
-            <p class="section-subtitle">Reconocimientos profesionales en gestión de bases de datos</p>
-            
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">🎓</div>
-                    <h3>Certificaciones en Bases de Datos</h3>
-                    <p>Certificaciones profesionales en las principales plataformas de gestión de bases de datos del mercado</p>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">📊</div>
-                    <h3>Especialización en Sector Seguros</h3>
-                    <p>Formación continua en normativas, regulaciones y mejores prácticas del sector asegurador</p>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">🔒</div>
-                    <h3>Seguridad de la Información</h3>
-                    <p>Certificaciones en seguridad de datos, protección de información y cumplimiento normativo</p>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">⚡</div>
-                    <h3>Optimización y Rendimiento</h3>
-                    <p>Especialización en optimización de consultas, tuning y mejora de rendimiento de sistemas</p>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">☁️</div>
-                    <h3>Tecnologías Cloud</h3>
-                    <p>Experiencia en migración y administración de bases de datos en entornos cloud</p>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">📈</div>
-                    <h3>Business Intelligence</h3>
-                    <p>Certificaciones en herramientas de BI y análisis de datos para toma de decisiones</p>
-                </div>
             </div>
         </div>
     </section>

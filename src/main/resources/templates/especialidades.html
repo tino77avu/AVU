@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Especialidades - Tecnologías y especialidades en bases de datos">
+    <title th:text="${titulo}">Especialidades - Especialista en Bases de Datos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a th:href="@{/}" class="logo-container">
+                <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/sobre-mi}">Sobre Mí</a></li>
+                <li><a th:href="@{/experiencia}">Experiencia</a></li>
+                <li><a th:href="@{/especialidades}">Especialidades</a></li>
+                <li><a th:href="@{/certificaciones}">Certificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Especialidades -->
+    <section class="about" style="padding-top: 3rem;">
+        <div class="section-container">
+            <h2 class="section-title">Tecnologías y Especialidades</h2>
+            <p class="section-subtitle">Dominio en múltiples plataformas y herramientas de bases de datos</p>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img th:src="@{/images/Imagen3.png}" alt="Tecnologías">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Mi experiencia abarca múltiples sistemas de gestión de bases de datos, incluyendo 
+                        <span class="highlight">Oracle, SQL Server, PostgreSQL, MySQL</span> y sistemas NoSQL 
+                        para casos de uso específicos.
+                    </p>
+                    <p>
+                        Especializado en <span class="highlight">ETL (Extract, Transform, Load)</span>, 
+                        integración de datos, data warehousing y arquitecturas de datos modernas que incluyen 
+                        big data y análisis en tiempo real.
+                    </p>
+                    <p>
+                        Competente en herramientas de administración y monitoreo, scripting automatizado, 
+                        y metodologías ágiles para la gestión de proyectos de base de datos complejos.
+                    </p>
+                    <p>
+                        Conocimiento profundo de las particularidades del sector seguros, incluyendo 
+                        regulaciones, normativas de datos y requerimientos específicos de reporting 
+                        y cumplimiento regulatorio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Especialista en Bases de Datos | Sector Seguros</p>
+            <p>Más de 20 años garantizando la excelencia en gestión de datos empresariales</p>
+        </div>
+    </footer>
+</body>
+</html>
+

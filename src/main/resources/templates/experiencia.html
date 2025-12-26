@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experiencia - Especialista en Bases de Datos con más de 20 años de experiencia">
+    <title th:text="${titulo}">Experiencia - Especialista en Bases de Datos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a th:href="@{/}" class="logo-container">
+                <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/sobre-mi}">Sobre Mí</a></li>
+                <li><a th:href="@{/experiencia}">Experiencia</a></li>
+                <li><a th:href="@{/especialidades}">Especialidades</a></li>
+                <li><a th:href="@{/certificaciones}">Certificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Experiencia -->
+    <section style="padding-top: 3rem;">
+        <div class="section-container">
+            <h2 class="section-title">Experiencia y Logros</h2>
+            <p class="section-subtitle">Trayectoria profesional en gestión de datos empresariales</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Años en Sector Seguros</div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Arquitectura de Bases de Datos</h3>
+                    <ul>
+                        <li>Diseño de esquemas normalizados y desnormalizados</li>
+                        <li>Arquitectura de sistemas distribuidos</li>
+                        <li>Modelado de datos empresariales</li>
+                        <li>Planeación de capacidad y escalabilidad</li>
+                        <li>Arquitecturas de alta disponibilidad</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Optimización y Rendimiento</h3>
+                    <ul>
+                        <li>Optimización de consultas SQL complejas</li>
+                        <li>Tuning de índices y particionamiento</li>
+                        <li>Análisis de planes de ejecución</li>
+                        <li>Monitoreo de rendimiento en tiempo real</li>
+                        <li>Resolución de cuellos de botella</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Seguridad y Cumplimiento</h3>
+                    <ul>
+                        <li>Implementación de políticas de seguridad</li>
+                        <li>Cifrado de datos sensibles</li>
+                        <li>Cumplimiento normativo del sector seguros</li>
+                        <li>Auditoría y trazabilidad de datos</li>
+                        <li>Gestión de acceso y permisos</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Sector Seguros</h3>
+                    <ul>
+                        <li>Gestión de pólizas y siniestros</li>
+                        <li>Sistemas de tarificación y cálculo de primas</li>
+                        <li>Análisis actuarial y riesgo</li>
+                        <li>Integración con sistemas legacy</li>
+                        <li>Reporting y Business Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Especialista en Bases de Datos | Sector Seguros</p>
+            <p>Más de 20 años garantizando la excelencia en gestión de datos empresariales</p>
+        </div>
+    </footer>
+</body>
+</html>
+

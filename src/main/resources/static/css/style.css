@@ -62,6 +62,13 @@ nav {
 .logo-container {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.15);
 }
 
 .logo {
@@ -69,6 +76,8 @@ nav {
     width: auto;
     max-width: 200px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
 .nav-links {
@@ -190,11 +199,15 @@ section {
 .section-title {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     position: relative;
-    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
     font-weight: 700;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .section-title::after {
@@ -398,6 +411,40 @@ section {
     line-height: 1.6;
 }
 
+/* Grid de imágenes de certificaciones */
+.cert-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cert-image-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    border-radius: 5px;
+}
+
 /* ========================================
    Footer
    ======================================== */
@@ -493,8 +540,13 @@ footer {
     
     .stats-grid,
     .skills-grid,
-    .cert-grid {
+    .cert-grid,
+    .cert-images-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .cert-image {
+        max-height: 250px;
     }
     
     .hero-image img {
