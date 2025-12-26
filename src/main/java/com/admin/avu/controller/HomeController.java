@@ -36,5 +36,11 @@ public class HomeController {
         model.addAttribute("titulo", "Certificaciones - Especialista en Bases de Datos");
         return "certificaciones";
     }
+
+    @GetMapping("/contacto")
+    public String contacto(Model model) {
+        model.addAttribute("titulo", "Contacto - Especialista en Bases de Datos");
+        return "contacto";
+    }
 }
 
