@@ -369,7 +369,8 @@ section {
     box-shadow: var(--shadow-lg);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    border: 3px solid transparent;
 }
 
 .stat-card::before {
@@ -382,15 +383,62 @@ section {
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: var(--border-radius-lg);
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 120deg,
+        #00ffff 150deg,
+        #00bfff 180deg,
+        #00ffff 210deg,
+        transparent 240deg,
+        transparent 360deg
+    );
+    animation: rotateBorder 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    padding: 4px;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
 }
 
 .stat-card:hover::before {
     opacity: 1;
 }
 
+.stat-card:hover::after {
+    opacity: 1;
+}
+
 .stat-card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-xl), 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .stat-number {
@@ -400,7 +448,7 @@ section {
     color: var(--lighter-blue);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .stat-label {
@@ -410,7 +458,7 @@ section {
     opacity: 0.95;
     font-weight: 600;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .skills-grid {
