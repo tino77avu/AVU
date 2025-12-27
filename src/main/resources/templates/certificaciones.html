@@ -6,6 +6,7 @@
     <meta name="description" content="Certificaciones - Reconocimientos profesionales en gestión de bases de datos">
     <title th:text="${titulo}">Certificaciones - Especialista en Bases de Datos</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/certifications.js}" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -26,63 +27,91 @@
     </header>
 
     <!-- Sección Certificaciones -->
-    <section class="certifications" style="padding-top: 3rem;">
+    <section class="certifications">
         <div class="section-container">
             <h2 class="section-title">Certificaciones y Formación</h2>
-            <p class="section-subtitle">Reconocimientos profesionales en gestión de bases de datos</p>
+            <p class="section-subtitle">Reconocimientos y certificaciones profesionales</p>
             
-            <div class="cert-images-grid">
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/az900.png}" alt="Microsoft Azure Fundamentals" class="cert-image">
+            <div class="cert-carousel-container">
+                <div class="cert-carousel">
+                    <div class="cert-image-card" data-description="Microsoft Azure Fundamentals. Certificación que valida conocimientos fundamentales sobre servicios en la nube de Microsoft Azure, incluyendo conceptos de computación, almacenamiento y seguridad.">
+                        <img th:src="@{/images/Certificaciones/az900.png}" alt="Microsoft Azure Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Microsoft Azure AI Fundamentals. Certificación que demuestra conocimientos básicos sobre inteligencia artificial y machine learning en la plataforma Azure, incluyendo servicios cognitivos y soluciones de IA.">
+                        <img th:src="@{/images/Certificaciones/ai900.png}" alt="Microsoft Azure AI Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Microsoft Azure Data Fundamentals. Certificación que valida conocimientos fundamentales sobre conceptos de datos en Azure, incluyendo bases de datos relacionales, no relacionales y servicios de análisis.">
+                        <img th:src="@{/images/Certificaciones/dp900.png}" alt="Microsoft Azure Data Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure. Certificación que valida experiencia en la arquitectura e implementación de soluciones en Oracle Cloud, incluyendo servicios de computación, almacenamiento y redes.">
+                        <img th:src="@{/images/Certificaciones/OIC1.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure Associate. Certificación de nivel asociado que demuestra competencia en el diseño, implementación y administración de servicios en Oracle Cloud Infrastructure.">
+                        <img th:src="@{/images/Certificaciones/OCI2.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure Professional. Certificación avanzada que valida habilidades profesionales en arquitectura de soluciones complejas en Oracle Cloud, optimización y mejores prácticas.">
+                        <img th:src="@{/images/Certificaciones/OCI3.jpg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Business Intelligence Foundation. Certificación que valida conocimientos en herramientas de BI, análisis de datos, creación de dashboards y visualización de información para la toma de decisiones empresariales.">
+                        <img th:src="@{/images/Certificaciones/BI.png}" alt="Business Intelligence" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Big Data Professional Certification. Certificación que demuestra competencia en el manejo de grandes volúmenes de datos, tecnologías de procesamiento distribuido, almacenamiento y análisis de big data.">
+                        <img th:src="@{/images/Certificaciones/BigData.png}" alt="Big Data" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Cybersecurity Awareness Professional. Certificación que valida conocimientos en seguridad de la información, protección de datos, prevención de amenazas cibernéticas y mejores prácticas de seguridad empresarial.">
+                        <img th:src="@{/images/Certificaciones/CybersecurityAwareness.png}" alt="Cybersecurity Awareness" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="GitHub Foundations. Certificación que valida habilidades en el uso de GitHub para control de versiones, colaboración en proyectos, gestión de repositorios y flujos de trabajo de desarrollo.">
+                        <img th:src="@{/images/Certificaciones/GitHibFundations.png}" alt="GitHub Foundations" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Scrum Foundation Professional. Certificación que demuestra conocimientos en metodologías ágiles, framework Scrum, gestión de proyectos iterativos y trabajo en equipos autoorganizados.">
+                        <img th:src="@{/images/Certificaciones/ScrumFundation.png}" alt="Scrum Foundation" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="AI Generative Professional. Certificación que valida conocimientos en inteligencia artificial generativa, modelos de lenguaje, creación de contenido con IA y aplicaciones prácticas de tecnologías generativas.">
+                        <img th:src="@{/images/Certificaciones/AiGenerative.png}" alt="AI Generative" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Canvas Certification. Certificación que valida competencia en la plataforma Canvas, herramientas de gestión de aprendizaje y diseño de experiencias educativas digitales.">
+                        <img th:src="@{/images/Certificaciones/Canvas.png}" alt="Canvas" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="FinOps Professional. Certificación que demuestra habilidades en FinOps (Cloud Financial Operations), optimización de costos en la nube, gestión financiera de servicios cloud y análisis de gastos.">
+                        <img th:src="@{/images/Certificaciones/Finops.png}" alt="FinOps" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Focus Certification. Certificación que valida conocimientos especializados en tecnologías específicas, metodologías avanzadas y mejores prácticas en el área de especialización profesional.">
+                        <img th:src="@{/images/Certificaciones/Focus.png}" alt="Focus" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Databricks Certification. Certificación que demuestra competencia en la plataforma Databricks, procesamiento de big data, análisis de datos con Spark y arquitectura de data lakes modernos.">
+                        <img th:src="@{/images/Certificaciones/Databricks.png}" alt="Databricks" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Qualys Certification. Certificación que valida conocimientos en seguridad y cumplimiento, gestión de vulnerabilidades, protección de endpoints y soluciones de seguridad en la nube.">
+                        <img th:src="@{/images/Certificaciones/Qualys.png}" alt="Qualys" class="cert-image">
+                    </div>
+                    <!-- Duplicar para scroll infinito -->
+                    <div class="cert-image-card" data-description="Microsoft Azure Fundamentals. Certificación que valida conocimientos fundamentales sobre servicios en la nube de Microsoft Azure, incluyendo conceptos de computación, almacenamiento y seguridad.">
+                        <img th:src="@{/images/Certificaciones/az900.png}" alt="Microsoft Azure Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Microsoft Azure AI Fundamentals. Certificación que demuestra conocimientos básicos sobre inteligencia artificial y machine learning en la plataforma Azure, incluyendo servicios cognitivos y soluciones de IA.">
+                        <img th:src="@{/images/Certificaciones/ai900.png}" alt="Microsoft Azure AI Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Microsoft Azure Data Fundamentals. Certificación que valida conocimientos fundamentales sobre conceptos de datos en Azure, incluyendo bases de datos relacionales, no relacionales y servicios de análisis.">
+                        <img th:src="@{/images/Certificaciones/dp900.png}" alt="Microsoft Azure Data Fundamentals" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure. Certificación que valida experiencia en la arquitectura e implementación de soluciones en Oracle Cloud, incluyendo servicios de computación, almacenamiento y redes.">
+                        <img th:src="@{/images/Certificaciones/OIC1.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure Associate. Certificación de nivel asociado que demuestra competencia en el diseño, implementación y administración de servicios en Oracle Cloud Infrastructure.">
+                        <img th:src="@{/images/Certificaciones/OCI2.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Oracle Cloud Infrastructure Professional. Certificación avanzada que valida habilidades profesionales en arquitectura de soluciones complejas en Oracle Cloud, optimización y mejores prácticas.">
+                        <img th:src="@{/images/Certificaciones/OCI3.jpg}" alt="Oracle Cloud Infrastructure" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Business Intelligence Foundation. Certificación que valida conocimientos en herramientas de BI, análisis de datos, creación de dashboards y visualización de información para la toma de decisiones empresariales.">
+                        <img th:src="@{/images/Certificaciones/BI.png}" alt="Business Intelligence" class="cert-image">
+                    </div>
+                    <div class="cert-image-card" data-description="Big Data Professional Certification. Certificación que demuestra competencia en el manejo de grandes volúmenes de datos, tecnologías de procesamiento distribuido, almacenamiento y análisis de big data.">
+                        <img th:src="@{/images/Certificaciones/BigData.png}" alt="Big Data" class="cert-image">
+                    </div>
                 </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/ai900.png}" alt="Microsoft Azure AI Fundamentals" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/dp900.png}" alt="Microsoft Azure Data Fundamentals" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/OIC1.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/OCI2.jpeg}" alt="Oracle Cloud Infrastructure" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/OCI3.jpg}" alt="Oracle Cloud Infrastructure" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/BI.png}" alt="Business Intelligence" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/BigData.png}" alt="Big Data" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/CybersecurityAwareness.png}" alt="Cybersecurity Awareness" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/GitHibFundations.png}" alt="GitHub Foundations" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/ScrumFundation.png}" alt="Scrum Foundation" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/AiGenerative.png}" alt="AI Generative" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/Canvas.png}" alt="Canvas" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/Finops.png}" alt="FinOps" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/Focus.png}" alt="Focus" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/Databricks.png}" alt="Databricks" class="cert-image">
-                </div>
-                <div class="cert-image-card">
-                    <img th:src="@{/images/Certificaciones/Qualys.png}" alt="Qualys" class="cert-image">
-                </div>
+                <div class="cert-description" id="certDescription"></div>
             </div>
         </div>
     </section>

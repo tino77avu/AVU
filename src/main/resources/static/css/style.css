@@ -218,12 +218,13 @@ nav {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     max-width: 100%;
-    transform: perspective(1000px) rotateY(-5deg);
+    transform: perspective(1200px) rotateY(-15deg);
     transition: transform 0.5s ease;
+    transform-origin: left center;
 }
 
 .hero-image:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+    transform: perspective(1200px) rotateY(-5deg) scale(1.02);
 }
 
 .hero-image img {
@@ -244,7 +245,7 @@ nav {
    ======================================== */
 
 section {
-    padding: 5rem 2rem;
+    padding: 2rem 2rem 5rem 2rem;
 }
 
 .section-container {
@@ -255,11 +256,11 @@ section {
 .section-title {
     font-size: 3rem;
     color: var(--primary-color);
-    margin-top: 2rem;
+    margin-top: 0;
     margin-bottom: 1.5rem;
     text-align: center;
     position: relative;
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
     padding-bottom: 2rem;
     font-weight: 800;
     word-wrap: break-word;
@@ -322,12 +323,13 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     max-width: 100%;
-    transform: perspective(1000px) rotateY(-5deg);
+    transform: perspective(1200px) rotateY(-15deg);
     transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform-origin: left center;
 }
 
 .about-image:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.02) translateY(-5px);
+    transform: perspective(1200px) rotateY(-5deg) scale(1.02) translateY(-5px);
     box-shadow: var(--shadow-xl);
 }
 
@@ -539,26 +541,42 @@ section {
     line-height: 1.6;
 }
 
-/* Grid de imágenes de certificaciones mejorado */
-.cert-images-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
+/* Carrusel horizontal de certificaciones */
+.cert-carousel-container {
+    width: 100%;
+    margin: 2rem auto 1rem;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.cert-carousel {
+    display: flex;
+    gap: 2rem;
+    animation: scrollHorizontal 40s linear infinite;
+    width: fit-content;
+}
+
+.cert-carousel:hover {
+    animation-play-state: paused;
 }
 
 .cert-image-card {
+    flex-shrink: 0;
+    width: 220px;
+    height: 280px;
     background: var(--white);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
 }
 
 .cert-image-card::before {
@@ -571,6 +589,8 @@ section {
     background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(100, 181, 246, 0.05) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: var(--border-radius-lg);
 }
 
 .cert-image-card:hover::before {
@@ -578,25 +598,89 @@ section {
 }
 
 .cert-image-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: var(--shadow-xl);
     border-color: var(--accent-bright);
+    z-index: 10;
 }
 
 .cert-image {
     width: 100%;
     height: auto;
-    max-height: 320px;
+    max-height: 240px;
     object-fit: contain;
     display: block;
     border-radius: 8px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transition: transform 0.3s ease;
 }
 
 .cert-image-card:hover .cert-image {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+/* Animación de scroll horizontal infinito */
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-220px * 17 - 2rem * 17));
+    }
+}
+
+/* Texto descriptivo de certificaciones */
+.cert-description {
+    margin: 2rem auto 0;
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 700px;
+    min-height: 80px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-medium);
+    font-size: 1rem;
+    line-height: 1.6;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.cert-description.show {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--accent-bright);
+}
+
+.cert-description::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--accent-bright);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cert-description.show::before {
+    opacity: 1;
+}
+
+/* Grid alternativo para móviles */
+.cert-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 /* ========================================
@@ -848,8 +932,40 @@ footer {
         max-height: 300px;
     }
     
+    .cert-carousel-container {
+        margin: 1.5rem auto 1rem;
+        padding: 1.5rem 0;
+    }
+    
+    .cert-carousel {
+        gap: 1.5rem;
+        animation: scrollHorizontal 30s linear infinite;
+    }
+    
+    .cert-image-card {
+        width: 180px;
+        height: 240px;
+        padding: 1rem;
+    }
+    
     .cert-image {
-        max-height: 280px;
+        max-height: 200px;
+    }
+    
+    .cert-description {
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        min-height: 60px;
+        font-size: 0.95rem;
+    }
+    
+    @keyframes scrollHorizontal {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-180px * 17 - 1.5rem * 17));
+        }
     }
     
     .stat-card {
