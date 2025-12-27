@@ -994,3 +994,439 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* ========================================
+   Servicios - Beneficios y Garantías
+   ======================================== */
+
+.services-section {
+    background: var(--white);
+}
+
+.guarantee-section {
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+}
+
+.benefits-container,
+.guarantee-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.benefits-list,
+.guarantee-list {
+    flex: 1;
+}
+
+.benefits-items,
+.guarantee-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-items li,
+.guarantee-items li {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    transition: all 0.3s ease;
+}
+
+.benefits-items li:last-child,
+.guarantee-items li:last-child {
+    border-bottom: none;
+}
+
+.benefits-items li:hover,
+.guarantee-items li:hover {
+    padding-left: 1rem;
+    background: linear-gradient(90deg, rgba(33, 150, 243, 0.05) 0%, transparent 100%);
+    border-radius: 8px;
+}
+
+.benefit-icon,
+.guarantee-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent-bright) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1.2rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.guarantee-icon {
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+}
+
+.benefits-items li:hover .benefit-icon,
+.guarantee-items li:hover .guarantee-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit-text,
+.guarantee-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.benefits-items li:hover .benefit-text,
+.guarantee-items li:hover .guarantee-text {
+    color: var(--primary-color);
+}
+
+/* Gráfico de barras para beneficios */
+.benefits-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.chart-graphic {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    height: 100%;
+    padding: 2rem;
+}
+
+.chart-bar {
+    width: 60px;
+    background: linear-gradient(180deg, var(--accent-bright) 0%, var(--primary-color) 100%);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s ease;
+    animation: growBar 1s ease-out;
+}
+
+.chart-bar:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.chart-bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.chart-bar:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.chart-bar:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.chart-bar:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.chart-arrow {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation: bounceArrow 2s ease-in-out infinite;
+}
+
+@keyframes growBar {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--height);
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Icono de garantía */
+.guarantee-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.guarantee-icon-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guarantee-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 60px;
+    border: 3px solid var(--text-dark);
+    border-radius: 4px;
+    background: var(--white);
+}
+
+.guarantee-band {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    border-radius: 4px 4px 0 0;
+}
+
+.guarantee-shield {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 140px;
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    animation: pulseShield 2s ease-in-out infinite;
+}
+
+.shield-checkmark {
+    font-size: 3rem;
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.guarantee-ribbons {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 30px;
+}
+
+.ribbon {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    background: var(--text-dark);
+    border-radius: 4px;
+}
+
+.ribbon-left {
+    left: 0;
+    transform: rotate(-15deg);
+}
+
+.ribbon-right {
+    right: 0;
+    transform: rotate(15deg);
+}
+
+@keyframes pulseShield {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+/* Responsive para servicios */
+@media (max-width: 968px) {
+    .benefits-container,
+    .guarantee-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .benefits-graphic,
+    .guarantee-graphic {
+        height: 250px;
+    }
+    
+    .chart-graphic {
+        gap: 1rem;
+    }
+    
+    .chart-bar {
+        width: 50px;
+    }
+    
+    .guarantee-icon-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .guarantee-box {
+        width: 60px;
+        height: 45px;
+    }
+    
+    .guarantee-shield {
+        width: 90px;
+        height: 105px;
+        top: 40px;
+    }
+    
+    .shield-checkmark {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-container,
+    .guarantee-container {
+        gap: 2rem;
+    }
+    
+    .benefit-text,
+    .guarantee-text {
+        font-size: 1rem;
+    }
+    
+    .benefits-graphic,
+    .guarantee-graphic {
+        height: 200px;
+    }
+    
+    .chart-bar {
+        width: 40px;
+    }
+    
+    .guarantee-icon-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .guarantee-box {
+        width: 50px;
+        height: 35px;
+    }
+    
+    .guarantee-shield {
+        width: 70px;
+        height: 80px;
+        top: 30px;
+    }
+    
+    .shield-checkmark {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   Matrix AV Effect - Contacto
+   ======================================== */
+
+.matrix-av-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto 3rem;
+    padding: 2rem;
+    background: #0a0e27;
+    position: relative;
+    overflow: hidden;
+}
+
+.matrix-av-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 255, 0.03) 2px,
+        rgba(0, 255, 255, 0.03) 4px
+    );
+    animation: matrixScan 8s linear infinite;
+}
+
+@keyframes matrixScan {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+
+.logo-av {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive para Logo AV */
+@media (max-width: 968px) {
+    .logo-av {
+        max-width: 400px;
+    }
+    
+    .matrix-av-container {
+        padding: 1.5rem;
+        margin: 1.5rem auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-av {
+        max-width: 300px;
+    }
+    
+    .matrix-av-container {
+        padding: 1rem;
+        margin: 1rem auto 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-av {
+        max-width: 250px;
+    }
+    
+    .matrix-av-container {
+        padding: 0.8rem;
+        margin: 0.8rem auto 1rem;
+    }
+}
